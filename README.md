@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/TonyMudRec/java-project-78/workflows/hexlet-check/badge.svg)](https://github.com/TonyMudRec/java-project-78/actions)
+![Build Status](https://github.com/TonyMudRec/java-project-78/actions/workflows/build-check.yml/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6065f5f52cc4558bf302/maintainability)](https://codeclimate.com/github/TonyMudRec/java-project-78/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6065f5f52cc4558bf302/test_coverage)](https://codeclimate.com/github/TonyMudRec/java-project-78/test_coverage)
 
