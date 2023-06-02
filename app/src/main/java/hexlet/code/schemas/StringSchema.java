@@ -1,17 +1,11 @@
 package hexlet.code.schemas;
 
-public class StringSchema {
+public class StringSchema extends BaseSchema {
 
     private int minLength = 0;
-    private boolean required = false;
     private String contains = "";
 
     public StringSchema() {
-    }
-
-    public StringSchema required() {
-        this.required = true;
-        return this;
     }
 
     public StringSchema minLength(int length) {
@@ -24,9 +18,10 @@ public class StringSchema {
         return this;
     }
 
+    @Override
     public boolean isValid(Object data) {
-        if (isNull(data) && required) {
-            return false;
+        if (isNull(data)) {
+            return !isRequired();
         }
         String strData = String.valueOf(data);
         return !isNumber(strData)
@@ -34,9 +29,6 @@ public class StringSchema {
                 && strData.length() >= minLength;
     }
 
-    public boolean isNull(Object data) {
-        return data == null || String.valueOf(data).isEmpty();
-    }
     public boolean isNumber(String data) {
         for (int i = 0; i < data.length(); i++) {
             if (Character.isDigit(data.charAt(i))) {
@@ -45,4 +37,5 @@ public class StringSchema {
         }
         return false;
     }
+
 }
