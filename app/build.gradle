@@ -9,6 +9,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'jacoco'
+    id 'checkstyle'
 }
 
 repositories {
@@ -22,6 +24,8 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'
+    testImplementation 'org.assertj:assertj-core:3.6.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 application {
@@ -29,11 +33,24 @@ application {
     mainClass = 'hexlet.code.App'
 }
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
+compileJava {
+    options.release = 17
+}
+
+test {
     useJUnitPlatform()
 }
 
-compileJava {
-    options.release = 17
+jacocoTestReport {
+    reports {
+        xml.required = true
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+}
+
+checkstyle {
+    toolVersion = '10.3.3'
 }
