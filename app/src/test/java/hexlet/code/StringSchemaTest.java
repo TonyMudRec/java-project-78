@@ -2,7 +2,6 @@ package hexlet.code;
 
 import hexlet.code.schemas.StringSchema;
 import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StringSchemaTest {
@@ -10,6 +9,7 @@ public class StringSchemaTest {
     void isValidTest() {
         Validator v = new Validator();
         StringSchema schema = v.string();
+
         assertThat(schema.isValid("")).as("with not required empty").isTrue();
         assertThat(schema.isValid(null)).as("with not required null").isTrue();
         schema.required();
