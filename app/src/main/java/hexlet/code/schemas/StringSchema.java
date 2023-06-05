@@ -36,7 +36,7 @@ public class StringSchema extends BaseSchema {
     }
 
     @Override
-    public BaseSchema required() {
-        return super.required();
+    public StringSchema required() {
+        return (StringSchema) super.required();
     }
 }

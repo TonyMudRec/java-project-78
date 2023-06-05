@@ -32,7 +32,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     @Override
-    public BaseSchema required() {
-        return super.required();
+    public NumberSchema required() {
+        return (NumberSchema) super.required();
     }
 }
