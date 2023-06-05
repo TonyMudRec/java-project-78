@@ -3,11 +3,7 @@ package hexlet.code.schemas;
 import java.util.Map;
 
 public abstract class BaseSchema {
-    private boolean required = false;
-
-    public boolean isNotRequired() {
-        return !required;
-    }
+    private boolean nullRequired = false;
 
     public boolean isNull(Object data) {
         if (data instanceof Map<?, ?>) {
@@ -18,14 +14,14 @@ public abstract class BaseSchema {
 
     public boolean isValid(Object data) {
         if (isNull(data)) {
-            return isNotRequired();
+            return !nullRequired;
         }
         return schemaValidator(data);
     }
     public abstract boolean schemaValidator(Object data);
 
     public BaseSchema required() {
-        required = true;
+        nullRequired = true;
         return this;
     }
 }

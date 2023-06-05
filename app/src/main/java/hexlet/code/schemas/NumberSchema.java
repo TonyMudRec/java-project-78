@@ -30,4 +30,9 @@ public class NumberSchema extends BaseSchema {
         endRange = end;
         return this;
     }
+
+    @Override
+    public BaseSchema required() {
+        return super.required();
+    }
 }
