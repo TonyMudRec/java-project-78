@@ -21,13 +21,13 @@ public class NumberSchema extends BaseSchema {
     }
 
     public NumberSchema positive() {
-        this.onlyPositive = true;
+        onlyPositive = true;
         return this;
     }
 
     public NumberSchema range(int start, int end) {
-        this.startRange = start;
-        this.endRange = end;
+        startRange = start;
+        endRange = end;
         return this;
     }
 }

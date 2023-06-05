@@ -25,7 +25,7 @@ public abstract class BaseSchema {
     public abstract boolean schemaValidator(Object data);
 
     public BaseSchema required() {
-        this.required = true;
+        required = true;
         return this;
     }
 }

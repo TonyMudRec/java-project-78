@@ -9,12 +9,12 @@ public class StringSchema extends BaseSchema {
     }
 
     public StringSchema minLength(int length) {
-        this.minLength = length;
+        minLength = length;
         return this;
     }
 
     public StringSchema contains(String str) {
-        this.contains = str;
+        contains = str;
         return this;
     }
 
