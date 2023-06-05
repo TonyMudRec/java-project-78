@@ -1,6 +1,6 @@
 package hexlet.code.schemas;
 
-public class NumberSchema extends BaseSchema {
+public final class NumberSchema extends BaseSchema {
 
     private int startRange = Integer.MIN_VALUE;
     private int endRange = Integer.MAX_VALUE;

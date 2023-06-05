@@ -5,14 +5,14 @@ import java.util.Map;
 public abstract class BaseSchema {
     private boolean nullRequired = false;
 
-    public boolean isNull(Object data) {
+    public final boolean isNull(Object data) {
         if (data instanceof Map<?, ?>) {
             return false;
         }
         return data == null | String.valueOf(data).isEmpty();
     }
 
-    public boolean isValid(Object data) {
+    public final boolean isValid(Object data) {
         if (isNull(data)) {
             return !nullRequired;
         }
