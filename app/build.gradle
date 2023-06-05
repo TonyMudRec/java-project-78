@@ -34,7 +34,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'hexlet.code.App'
+    mainClass = 'hexlet.code.Validator'
 }
 
 compileJava {
