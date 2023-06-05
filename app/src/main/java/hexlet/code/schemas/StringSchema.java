@@ -19,10 +19,7 @@ public class StringSchema extends BaseSchema {
     }
 
     @Override
-    public boolean isValid(Object data) {
-        if (isNull(data)) {
-            return !isRequired();
-        }
+    public boolean schemaValidator(Object data) {
         String strData = String.valueOf(data);
         return !isNumber(strData)
                 && strData.contains(contains)
@@ -37,5 +34,4 @@ public class StringSchema extends BaseSchema {
         }
         return false;
     }
-
 }

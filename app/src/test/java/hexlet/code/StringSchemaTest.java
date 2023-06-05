@@ -12,7 +12,9 @@ public class StringSchemaTest {
 
         assertThat(schema.isValid("")).as("with not required empty").isTrue();
         assertThat(schema.isValid(null)).as("with not required null").isTrue();
+
         schema.required();
+
         assertThat(schema.isValid(null)).as("with required null").isFalse();
         assertThat(schema.isValid("")).as("with required empty").isFalse();
         assertThat(schema.isValid(5)).as("with number").isFalse();

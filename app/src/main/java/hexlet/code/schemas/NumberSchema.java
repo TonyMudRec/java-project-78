@@ -10,10 +10,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     @Override
-    public boolean isValid(Object data) {
-        if (isNull(data)) {
-            return !isRequired();
-        }
+    public boolean schemaValidator(Object data) {
         if (data instanceof String) {
             return false;
         }
