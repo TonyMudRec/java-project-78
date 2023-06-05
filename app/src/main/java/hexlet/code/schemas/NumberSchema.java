@@ -17,7 +17,7 @@ public class NumberSchema extends BaseSchema {
         int intData = (int) data;
         return startRange <= intData
                 && intData <= endRange
-                && (onlyPositive == (intData > 0));
+                && ((intData > 0) | !onlyPositive);
     }
 
     public NumberSchema positive() {
