@@ -37,4 +37,9 @@ public final class MapSchema extends BaseSchema {
         mapSize = size;
         return this;
     }
+
+    public MapSchema required() {
+        setNullRequiredTrue();
+        return this;
+    }
 }

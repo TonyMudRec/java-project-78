@@ -3,6 +3,7 @@ package hexlet.code.schemas;
 import java.util.Map;
 
 public abstract class BaseSchema {
+
     private boolean nullRequired = false;
 
     public final boolean isNull(Object data) {
@@ -18,10 +19,10 @@ public abstract class BaseSchema {
         }
         return schemaValidator(data);
     }
+
     public abstract boolean schemaValidator(Object data);
 
-    public BaseSchema required() {
-        nullRequired = true;
-        return this;
+    public final void setNullRequiredTrue() {
+        this.nullRequired = true;
     }
 }
